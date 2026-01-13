@@ -8,12 +8,12 @@ Instead of chasing theoretical perfection, we focus on **physical limits**, **op
 
 ---
 
-## 🏗️ The 35-45-20 Philosophy
+## 🏗️ The 30-50-20 Philosophy
 
 I categorize architectural knowledge into three distinct layers based on their role in a system's lifecycle:
 
-- **⭐ The Foundations (35%):** Essential building blocks. Invariant patterns required for architectural closure and baseline reliability.
-- **🔥 The Battlegrounds (45%):** Where the real complexity lies. Focuses on decoupling, high availability, and managing state at scale.
+- **⭐ The Foundations (30%):** Essential building blocks. Invariant patterns required for architectural closure and baseline reliability.
+- **🔥 The Battlegrounds (50%):** Where the real complexity lies. Focuses on decoupling, high availability, and managing state at scale.
 - **📘 The Expert's Edge (20%):** Specialized domains. Niche algorithms and advanced coordination models for extreme constraints.
 
 ---
