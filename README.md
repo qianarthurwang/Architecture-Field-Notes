@@ -1,10 +1,8 @@
-# Architecture Field Notes
+# 🏗️ Architecture Field Notes
 
 > **"Architecture is the art of deciding which trade-offs you can live with."**
 
-Welcome! This repository is a curated collection of pragmatic architectural patterns and field notes. It focuses on the transition from "building functional systems" to "designing resilient, evolving infrastructures" that survive at scale.
-
-Instead of chasing theoretical perfection, we focus on **physical limits**, **operational resilience**, and the **economic reality** of building massive systems in the wild.
+Welcome! This repository is a **comprehensive glossary** of architectural patterns. It serves as the foundational reference for [**my Substack**](https://qianarthurwang.substack.com/), where I discuss high-level strategy and real-world implementation. This repository is where you go if you need a quick, simple explanation of a specific pattern or term
 
 ---
 
@@ -18,95 +16,107 @@ I categorize architectural knowledge into three distinct layers based on their r
 
 ---
 
-## 🛠️ Patterns Wiki
+## 🛠️ Patterns Wiki (Index)
 
-*A living catalog of architectural patterns and their quantitative trade-offs.*
+### 0. The Architect's Ruler (The "Sense" of Scale)
+- [ ] [Hardware Latency Numbers](./patterns/latency-numbers.md) 🧱
+- [ ] [Availability Math (SLO/SLA)](./patterns/availability-math.md) 🧱
 
-### 0. The Architect's Ruler (Foundational Intuition)
-- [ ] Hardware Latency Numbers Every Architect Should Know 🧱
-- [ ] Availability Math (SLO/SLA Calculations) 🧱
+### 1. Ingress & Traffic Orchestration (How users reach us)
+- [ ] [Load Balancing (L4/L7)](./patterns/load-balancing.md) 🧱
+- [ ] [Consistent Hashing](./patterns/consistent-hashing.md) 🧱
+- [ ] [Service Discovery](./patterns/service-discovery.md) 🧱
+- [ ] [Health Checks & Probing](./patterns/health-checks.md) 🧱
+- [ ] [API Gateway](./patterns/api-gateway.md) 🧱
+- [ ] [Backend for Frontend (BFF)](./patterns/bff.md) ⚔️
+- [ ] [Sidecar Pattern](./patterns/sidecar.md) ⚔️
+- [ ] [Service Mesh](./patterns/service-mesh.md) ⚔️
+- [ ] [Global Traffic Management (GTM)](./patterns/gtm.md) 🛰️
+- [ ] [Edge Computing](./patterns/edge-computing.md) 🛰️
 
-### 1. Ingress & Traffic Orchestration
-- [ ] Load Balancing (L4/L7 Strategies) 🧱
-- [ ] Consistent Hashing 🧱
-- [ ] Service Discovery Mechanisms 🧱
-- [ ] Health Check & Readiness Probing 🧱
-- [ ] API Gateway Pattern 🧱
-- [ ] Backend for Frontend (BFF) ⚔️
-- [ ] Sidecar Pattern ⚔️
-- [ ] Service Mesh Control Planes ⚔️
-- [ ] Global Traffic Management (GTM) 🛰️
-- [ ] Edge Computing & PoP Nodes 🛰️
+### 2. Data Strategy & State (How we handle information)
+- [ ] [Database Sharding](./patterns/db-sharding.md) 🧱
+- [ ] [Partitioning (Horizontal/Vertical)](./patterns/partitioning.md) 🧱
+- [ ] [Replication Models](./patterns/replication-models.md) 🧱
+- [ ] [Write-Ahead Log (WAL)](./patterns/wal.md) 🧱
+- [ ] [LSM-Tree vs B-Tree Engines](./patterns/storage-engines.md) ⚔️
+- [ ] [CQRS](./patterns/cqrs.md) ⚔️
+- [ ] [Event Sourcing](./patterns/event-sourcing.md) ⚔️
+- [ ] [Change Data Capture (CDC)](./patterns/cdc.md) ⚔️
+- [ ] [Anti-Entropy Mechanisms](./patterns/anti-entropy.md) ⚔️
+- [ ] [Geo-Replication](./patterns/geo-replication.md) 🛰️
+- [ ] [Conflict Resolution (LWW, etc.)](./patterns/conflict-resolution.md) 🛰️
 
-### 2. Data Strategy & State Management
-- [ ] Database Sharding Strategies 🧱
-- [ ] Horizontal vs. Vertical Partitioning 🧱
-- [ ] Replication Models (Leader-based / Multi-leader) 🧱
-- [ ] Write-Ahead Log (WAL) 🧱
-- [ ] LSM-Tree Storage Engines ⚔️
-- [ ] B-Tree Storage Engines ⚔️
-- [ ] CQRS (Command Query Responsibility Segregation) ⚔️
-- [ ] Event Sourcing ⚔️
-- [ ] Change Data Capture (CDC) ⚔️
-- [ ] Anti-Entropy Mechanisms ⚔️
-- [ ] Geo-Replication & Data Sovereignty 🛰️
-- [ ] Conflict Resolution (LWW, Custom Resolvers) 🛰️
-- [ ] Directory-Based Partitioning 🛰️
+### 3. Coordination & Consistency (How servers agree)
+- [ ] [CAP Theorem & PACELC](./patterns/cap-pacelc.md) 🧱
+- [ ] [Consistency Models](./patterns/consistency-models.md) 🧱
+- [ ] [Saga Pattern](./patterns/saga.md) 🧱
+- [ ] [TCC (Try-Confirm-Cancel)](./patterns/tcc.md) ⚔️
+- [ ] [Distributed Locking](./patterns/distributed-locking.md) ⚔️
+- [ ] [Leader Election](./patterns/leader-election.md) ⚔️
+- [ ] [Consensus (Raft/Paxos)](./patterns/consensus.md) 🛰️
+- [ ] [Logical Clocks](./patterns/logical-clocks.md) 🛰️
+- [ ] [CRDTs](./patterns/crdts.md) 🛰️
 
-### 3. Coordination & Distributed Consistency
-- [ ] CAP Theorem 🧱
-- [ ] PACELC Framework 🧱
-- [ ] Strong vs. Eventual Consistency Models 🧱
-- [ ] Distributed Transactions (Saga Pattern) 🧱
-- [ ] TCC (Try-Confirm-Cancel) ⚔️
-- [ ] Distributed Locking & Fencing Tokens ⚔️
-- [ ] Lease Mechanisms ⚔️
-- [ ] Leader Election Protocols ⚔️
-- [ ] Consensus Algorithms (Raft / Paxos) ⚔️
-- [ ] Quorum Systems (N, R, W) 🛰️
-- [ ] Logical Clocks (Vector / Lamport) 🛰️
-- [ ] CRDTs (Conflict-free Replicated Data Types) 🛰️
-- [ ] Merkle Trees for State Sync 🛰️
+### 4. Communication & Messaging (How services talk)
+- [ ] [Protocols (gRPC/REST/GraphQL)](./patterns/protocols.md) 🧱
+- [ ] [Message Queues & Pub/Sub](./patterns/messaging-basics.md) 🧱
+- [ ] [Idempotency](./patterns/idempotency.md) ⚔️
+- [ ] [Exactly-once Semantics](./patterns/exactly-once.md) ⚔️
+- [ ] [Backpressure & Flow Control](./patterns/backpressure.md) ⚔️
+- [ ] [Dead Letter Queues & Retries](./patterns/dlq-retries.md) 🛰️
+- [ ] [Priority Queuing](./patterns/priority-queues.md) 🛰️
 
-### 4. Communication & Messaging Backbone
-- [ ] Interface Protocols (gRPC vs. REST vs. GraphQL) 🧱
-- [ ] Message Queues (Point-to-Point) 🧱
-- [ ] Pub/Sub Patterns 🧱
-- [ ] Idempotent Processing ⚔️
-- [ ] Exactly-once Delivery Semantics ⚔️
-- [ ] Backpressure & Flow Control ⚔️
-- [ ] Real-time Streams (WebSockets / SSE) ⚔️
-- [ ] Claim Check Pattern 🛰️
-- [ ] Dead Letter Queues & Retry Policies 🛰️
-- [ ] Priority Queuing & Weighted Fair Queuing 🛰️
+### 5. Reliability & Shielding (How we stay alive)
+- [ ] [Rate Limiting & Throttling](./patterns/rate-limiting.md) 🧱
+- [ ] [Timeouts & Deadlines](./patterns/timeouts.md) 🧱
+- [ ] [Retries & Exponential Backoff](./patterns/backoff.md) 🧱
+- [ ] [Circuit Breaker](./patterns/circuit-breaker.md) ⚔️
+- [ ] [Bulkhead Isolation](./patterns/bulkhead.md) ⚔️
+- [ ] [Load Shedding](./patterns/load-shedding.md) ⚔️
+- [ ] [Adaptive Concurrency Limits](./patterns/adaptive-concurrency.md) 🛰️
+- [ ] [Byzantine Fault Tolerance (BFT)](./patterns/bft.md) 🛰️
 
-### 5. Reliability & System Shielding
-- [ ] Rate Limiting & Throttling 🧱
-- [ ] Timeouts & Deadlines 🧱
-- [ ] Retries & Exponential Backoff 🧱
-- [ ] Circuit Breaker Pattern ⚔️
-- [ ] Bulkhead Isolation ⚔️
-- [ ] Load Shedding & Graceful Degradation ⚔️
-- [ ] Chaos Engineering & Fault Injection ⚔️
-- [ ] Adaptive Concurrency Limits 🛰️
-- [ ] Byzantine Fault Tolerance (BFT) 🛰️
+### 6. Performance & Evolution (How we get faster)
+- [ ] [Caching Strategies](./patterns/caching.md) 🧱
+- [ ] [Distributed ID Generation](./patterns/id-generation.md) 🧱
+- [ ] [Cache Pitfalls](./patterns/cache-pitfalls.md) ⚔️
+- [ ] [Bloom & Cuckoo Filters](./patterns/probabilistic-filters.md) ⚔️
+- [ ] [Request Coalescing (Singleflight)](./patterns/singleflight.md) ⚔️
+- [ ] [Double-Write Migration](./patterns/double-write.md) ⚔️
+- [ ] [Shadow Reads](./patterns/shadow-reads.md) 🛰️
+- [ ] [Probabilistic Structures (HLL)](./patterns/hll.md) 🛰️
 
-### 6. Performance Optimization & Evolution
-- [ ] Caching Strategies (Cache-Aside / Write-Through) 🧱
-- [ ] Distributed ID Generation (Snowflake, etc.) 🧱
-- [ ] Cache Pitfalls (Avalanche / Breakdown / Penetration) ⚔️
-- [ ] Bloom Filters ⚔️
-- [ ] Cuckoo Filters ⚔️
-- [ ] Request Coalescing (Singleflight) ⚔️
-- [ ] Double-Write Migration ⚔️
-- [ ] Shadow Reads & Dark Launches 🛰️
-- [ ] Probabilistic Structures (HyperLogLog / Count-Min Sketch) 🛰️
+### 7. Observability & Insight (How we see what's happening)
+*Understanding the internal state of a system from its external outputs.*
+- [ ] [Metrics, Logs, and Traces (The Three Pillars)](./patterns/observability-pillars.md) 🧱
+- [ ] [Distributed Tracing & Context Propagation](./patterns/distributed-tracing.md) ⚔️
+- [ ] [Structured Logging](./patterns/structured-logging.md) 🧱
+- [ ] [Synthetic Monitoring vs. Real User Monitoring (RUM)](./patterns/monitoring-types.md) ⚔️
+- [ ] [Sampling Strategies](./patterns/tracing-sampling.md) 🛰️
+
+### 8. Deployment & Evolution (How we change the ship while sailing)
+*Moving from Version A to Version B without sinking.*
+- [ ] [Blue-Green Deployment](./patterns/blue-green.md) 🧱
+- [ ] [Canary Releases](./patterns/canary.md) ⚔️
+- [ ] [Feature Flags / Toggles](./patterns/feature-flags.md) ⚔️
+- [ ] [Strangler Fig Pattern (Legacy Migration)](./patterns/strangler-pattern.md) ⚔️
+- [ ] [Database Schema Evolution (Expand/Contract)](./patterns/db-migration.md) 🛰️
+
+### 9. Structural Styles (The Big Picture)
+*High-level organizational models for services.*
+- [ ] [Monolith vs. Microservices](./patterns/monolith-microservices.md) 🧱
+- [ ] [Serverless & FaaS](./patterns/serverless.md) ⚔️
+- [ ] [Cell-based Architecture](./patterns/cell-based-architecture.md) 🛰️
+- [ ] [Control Plane vs. Data Plane Separation](./patterns/cp-dp-separation.md) 🛰️
 
 ---
 
-*This knowledge base is curated and edited by me, with architectural framing and drafting assistance from AI.*
+## 🔗 Bridge to the blogs
+*For the high-level strategy and production stories, visit:*
+👉 [**my Substack**](https://qianarthurwang.substack.com/)
 
 ---
 
 ## 📄 License
-This project is licensed under the MIT License.
+MIT License. Content curated by me, with framing assistance from AI.
