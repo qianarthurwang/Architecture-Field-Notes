@@ -10,77 +10,97 @@ Instead of chasing theoretical perfection, we focus on **physical limits**, **op
 
 ## 🏗️ The 30-50-20 Philosophy
 
-I categorize architectural knowledge into three distinct layers based on their role in a system's lifecycle:
+I categorize architectural knowledge into three distinct layers based on their role in a system's lifecycle and the intuition required to master them:
 
-- **⭐ The Foundations (30%):** Essential building blocks. Invariant patterns required for architectural closure and baseline reliability.
-- **🔥 The Battlegrounds (50%):** Where the real complexity lies. Focuses on decoupling, high availability, and managing state at scale.
-- **📘 The Expert's Edge (20%):** Specialized domains. Niche algorithms and advanced coordination models for extreme constraints.
+* 🧱 **The Foundations (30%):** The invariants. Essential building blocks required for architectural closure and baseline reliability.
+* ⚔️ **The Battlegrounds (50%):** Where real engineering happens. This layer focuses on scale, state management, and the messy trade-offs of high-availability systems.
+* 🛰️ **The Expert's Edge (20%):** Specialized domains. Niche algorithms and advanced coordination models designed for extreme constraints and performance frontiers.
 
 ---
 
-## 🛠️ Pattern Wiki (The 49+ Patterns)
+## 🛠️ Patterns Wiki
 
-*A living catalog of architectural patterns. Detailed deep dives for each can be found in the `/patterns` directory.*
+*A living catalog of architectural patterns and their quantitative trade-offs.*
 
-### 1. Traffic & Ingress Control
-- [ ] Load Balancing (L4 vs L7) ⭐
-- [ ] Service Discovery ⭐
-- [ ] API Gateway Pattern ⭐
-- [ ] BFF (Backend for Frontend) 🔥
-- [ ] Sidecar Pattern 🔥
-- [ ] Service Mesh 🔥
-- [ ] Edge Computing / PoP Nodes 📘
+### 0. The Architect's Ruler (Foundational Intuition)
+- [ ] Hardware Latency Numbers Every Architect Should Know 🧱
+- [ ] Availability Math (SLO/SLA Calculations) 🧱
 
-### 2. Data & State Management
-- [ ] Database Sharding ⭐
-- [ ] Database Replication (Master-Slave / Multi-Master) ⭐
-- [ ] Geo-Sharding & Replication 📘
-- [ ] Directory-Based Partitioning 📘
-- [ ] LSM-Tree (Write-heavy optimization) 🔥
-- [ ] B+ Tree (Read-heavy optimization) 🔥
-- [ ] CQRS (Command Query Responsibility Segregation) 🔥
-- [ ] Event Sourcing 🔥
+### 1. Ingress & Traffic Orchestration
+- [ ] Load Balancing (L4/L7 Strategies) 🧱
+- [ ] Consistent Hashing 🧱
+- [ ] Service Discovery Mechanisms 🧱
+- [ ] Health Check & Readiness Probing 🧱
+- [ ] API Gateway Pattern 🧱
+- [ ] Backend for Frontend (BFF) ⚔️
+- [ ] Sidecar Pattern ⚔️
+- [ ] Service Mesh Control Planes ⚔️
+- [ ] Global Traffic Management (GTM) 🛰️
+- [ ] Edge Computing & PoP Nodes 🛰️
 
-### 3. Coordination & Consistency
-- [ ] CAP Theorem / PACELC ⭐
-- [ ] Consistent Hashing ⭐
-- [ ] Strong vs. Eventual Consistency ⭐
-- [ ] Distributed Transactions (Saga Pattern) ⭐
-- [ ] Distributed Locking (Redis / Zookeeper) 🔥
-- [ ] Leader Election (Raft / Paxos) 🔥
-- [ ] 2PC / 3PC 📘
-- [ ] Quorums (N, R, W) 📘
-- [ ] Logical Clocks (Vector Clocks / Lamport) 📘
-- [ ] CRDTs (Conflict-free Replicated Data Types) 📘
-- [ ] Merkle Trees 📘
+### 2. Data Strategy & State Management
+- [ ] Database Sharding Strategies 🧱
+- [ ] Horizontal vs. Vertical Partitioning 🧱
+- [ ] Replication Models (Leader-based / Multi-leader) 🧱
+- [ ] Write-Ahead Log (WAL) 🧱
+- [ ] LSM-Tree Storage Engines ⚔️
+- [ ] B-Tree Storage Engines ⚔️
+- [ ] CQRS (Command Query Responsibility Segregation) ⚔️
+- [ ] Event Sourcing ⚔️
+- [ ] Change Data Capture (CDC) ⚔️
+- [ ] Anti-Entropy Mechanisms ⚔️
+- [ ] Geo-Replication & Data Sovereignty 🛰️
+- [ ] Conflict Resolution (LWW, Custom Resolvers) 🛰️
+- [ ] Directory-Based Partitioning 🛰️
 
-### 4. Communication & Messaging
-- [ ] Protocols: RPC vs. REST vs. GraphQL ⭐
-- [ ] Message Queues (Kafka / RabbitMQ) ⭐
-- [ ] Pub/Sub Pattern ⭐
-- [ ] Backpressure 🔥
-- [ ] Real-time: Polling, WebSockets, SSE 🔥
-- [ ] Claim Check Pattern 📘
-- [ ] Priority Queue Pattern 📘
+### 3. Coordination & Distributed Consistency
+- [ ] CAP Theorem 🧱
+- [ ] PACELC Framework 🧱
+- [ ] Strong vs. Eventual Consistency Models 🧱
+- [ ] Distributed Transactions (Saga Pattern) 🧱
+- [ ] TCC (Try-Confirm-Cancel) ⚔️
+- [ ] Distributed Locking & Fencing Tokens ⚔️
+- [ ] Lease Mechanisms ⚔️
+- [ ] Leader Election Protocols ⚔️
+- [ ] Consensus Algorithms (Raft / Paxos) ⚔️
+- [ ] Quorum Systems (N, R, W) 🛰️
+- [ ] Logical Clocks (Vector / Lamport) 🛰️
+- [ ] CRDTs (Conflict-free Replicated Data Types) 🛰️
+- [ ] Merkle Trees for State Sync 🛰️
 
-### 5. Reliability & Resilience
-- [ ] Rate Limiting ⭐
-- [ ] Idempotency ⭐
-- [ ] Timeouts ⭐
-- [ ] Load Shedding / Throttling 🔥
-- [ ] Circuit Breaker 🔥
-- [ ] Bulkhead Pattern 🔥
-- [ ] Retry with Backoff & Jitter 🔥
-- [ ] Graceful Degradation 🔥
+### 4. Communication & Messaging Backbone
+- [ ] Interface Protocols (gRPC vs. REST vs. GraphQL) 🧱
+- [ ] Message Queues (Point-to-Point) 🧱
+- [ ] Pub/Sub Patterns 🧱
+- [ ] Idempotent Processing ⚔️
+- [ ] Exactly-once Delivery Semantics ⚔️
+- [ ] Backpressure & Flow Control ⚔️
+- [ ] Real-time Streams (WebSockets / SSE) ⚔️
+- [ ] Claim Check Pattern 🛰️
+- [ ] Dead Letter Queues & Retry Policies 🛰️
+- [ ] Priority Queuing & Weighted Fair Queuing 🛰️
 
-### 6. Performance & Evolution
-- [ ] Caching Strategies (Cache-Aside, Write-Through) ⭐
-- [ ] Distributed ID (Snowflake, etc.) ⭐
-- [ ] Cache Pitfalls (Avalanche, Breakdown, Penetration) 🔥
-- [ ] Bloom Filter 🔥
-- [ ] Request Coalescing (Singleflight) 🔥
-- [ ] Count-Min Sketch 📘
-- [ ] Double-Write Migration & Observability 🔥
+### 5. Reliability & System Shielding
+- [ ] Rate Limiting & Throttling 🧱
+- [ ] Timeouts & Deadlines 🧱
+- [ ] Retries & Exponential Backoff 🧱
+- [ ] Circuit Breaker Pattern ⚔️
+- [ ] Bulkhead Isolation ⚔️
+- [ ] Load Shedding & Graceful Degradation ⚔️
+- [ ] Chaos Engineering & Fault Injection ⚔️
+- [ ] Adaptive Concurrency Limits 🛰️
+- [ ] Byzantine Fault Tolerance (BFT) 🛰️
+
+### 6. Performance Optimization & Evolution
+- [ ] Caching Strategies (Cache-Aside / Write-Through) 🧱
+- [ ] Distributed ID Generation (Snowflake, etc.) 🧱
+- [ ] Cache Pitfalls (Avalanche / Breakdown / Penetration) ⚔️
+- [ ] Bloom Filters ⚔️
+- [ ] Cuckoo Filters ⚔️
+- [ ] Request Coalescing (Singleflight) ⚔️
+- [ ] Double-Write Migration ⚔️
+- [ ] Shadow Reads & Dark Launches 🛰️
+- [ ] Probabilistic Structures (HyperLogLog / Count-Min Sketch) 🛰️
 
 ---
 
