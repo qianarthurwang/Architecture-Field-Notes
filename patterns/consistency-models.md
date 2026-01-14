@@ -31,4 +31,4 @@ graph LR
 ### 🧭 Decision Triggers
 * Move to [[CAP & PACELC]](cap-pacelc.md) to justify why you are moving away from Strong Consistency to the business team.
 * Shift to Strong Consistency immediately if you are handling distributed transactions or financial balances where "eventual" means "wrong money."
-* Combine with [Idempotency](idempotency.md) if using Eventual Consistency to ensure retried writes don't create duplicate entries.
+* Combine with [[Idempotency]](idempotency.md) if using Eventual Consistency to ensure retried writes don't create duplicate entries.
