@@ -5,42 +5,38 @@
 ---
 
 ## 💡 What is it?
-* **Simple Analogy:** [e.g., "Like a safety switch in your house that flips when there is too much power."]
-* **In Plain English:** [1-2 sentences explaining the concept without using heavy jargon.]
+* **Simple Analogy:** [e.g., "Like a safety switch in your house."]
+* **In Plain English:** [1-2 sentences explaining the concept.]
 
 ## ⚙️ How it Works
 ```mermaid
 graph LR
     A[User] --> B{Pattern}
     B -- "Normal" --> C[Success]
-    B -- "Issue" --> D[Simple Error/Backup]
+    B -- "Issue" --> D[Fallback]
 ```
 
 **The Flow:**
-1. **Request:** The user or service sends a request.
-2. **Intercept:** This pattern intercepts the request to check the system status.
-3. **Route:**
-   - If everything is **OK**, it proceeds to the target resource.
-   - If there is an **Issue**, it immediately triggers a fallback to protect the system.
+1. **Request:** The user sends a request.
+2. **Intercept:** The pattern checks system status.
+3. **Route:** Proceed if OK; fallback if an issue is detected.
 
-## ✅ Pros & ❌ Cons
-**Pros (+):**
-* [Benefit 1: e.g., Stops one failing service from breaking the whole system.]
-* [Benefit 2: e.g., Gives the system a chance to recover.]
+## ⚖️ The Architect's Trade-off & Decision Compass
 
-**Cons (-):**
-* [Downside 1: e.g., Users might see an error message instead of waiting.]
-* [Downside 2: e.g., Needs a bit more code to set up.]
+### 💰 What you are "buying"
+* **[Benefit 1]:** What specific problem does this solve at scale?
+* **[Benefit 2]:** How does it simplify the system or protect it?
 
-## 🧭 Decision Compass 
-* If you need to define [Specific Requirement], explore [[Pattern Name Y]](pattern-y.md). 
-* When [Situation X] occurs, you might need to pivot from this pattern to [[Pattern Name Z]](pattern-z.md). 
-* This pattern provides the foundation for [[Pattern Name W]](pattern-w.md). 
+### 📉 The "Tax" you pay
+* **[Complexity/Cost]:** Does it increase latency? Does it make debugging harder?
+* **[Operational Burden]:** What does the on-call engineer need to worry about?
+
+### 🧭 Decision Triggers
+* **Move to [[Pattern B]](pattern-b.md)** if you encounter **[Situation X]**.
+* **Combine with [[Pattern C]](pattern-c.md)** if you need **[Requirement Y]**.
+* **Avoid this pattern** if your system **[Specific Constraint]**.
 
 ---
 
 ## 📑 Read more
-*This pattern is discussed or applied in the following articles:*
-
-* 📝 [Blog Title 1 - Click to Read](https://qianarthurwang.substack.com/)
-* 📝 [Blog Title 2 - Click to Read](https://qianarthurwang.substack.com/)
+* 📝 [Blog Title 1](https://qianarthurwang.substack.com/)
