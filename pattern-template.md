@@ -32,6 +32,11 @@ graph LR
 * [Downside 1: e.g., Users might see an error message instead of waiting.]
 * [Downside 2: e.g., Needs a bit more code to set up.]
 
+## 🧭 Decision Compass 
+* If you need to define [Specific Requirement], explore [[Pattern Name Y]](pattern-y.md). 
+* When [Situation X] occurs, you might need to pivot from this pattern to [[Pattern Name Z]](pattern-z.md). 
+* This pattern provides the foundation for [[Pattern Name W]](pattern-w.md). 
+
 ---
 
 ## 📑 Read more
