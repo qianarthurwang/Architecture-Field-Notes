@@ -2,7 +2,7 @@
 
 > **"Architecture is the art of deciding which trade-offs you can live with."**
 
-Welcome! This repository is a **comprehensive glossary** of architectural patterns. It serves as the foundational reference for [**my Substack**](https://qianarthurwang.substack.com/), where I discuss high-level strategy and real-world implementation. This repository is where you go if you need a quick, simple explanation of a specific pattern or term
+Welcome! This repository is a **comprehensive glossary** of architectural patterns. It serves as the foundational reference for [**my Substack**](https://qianarthurwang.substack.com/), where I discuss high-level strategy and real-world implementation. This repository is where you go if you need a quick, simple explanation of a specific pattern or term.
 
 ---
 
@@ -20,7 +20,7 @@ I categorize architectural knowledge into three distinct layers based on their r
 
 ### 0. The Architect's Ruler (The "Sense" of Scale)
 - [ ] [Hardware Latency Numbers](./patterns/latency-numbers.md) 🧱
-- [ ] [Availability Math (SLO/SLA)](./patterns/availability-math.md) 🧱
+- [x] [Availability Math](./patterns/availability-math.md) 🧱
 
 ### 1. Ingress & Traffic Orchestration (How users reach us)
 - [ ] [Load Balancing (L4/L7)](./patterns/load-balancing.md) 🧱
@@ -48,8 +48,8 @@ I categorize architectural knowledge into three distinct layers based on their r
 - [ ] [Conflict Resolution (LWW, etc.)](./patterns/conflict-resolution.md) 🛰️
 
 ### 3. Coordination & Consistency (How servers agree)
-- [ ] [CAP Theorem & PACELC](./patterns/cap-pacelc.md) 🧱
-- [ ] [Consistency Models](./patterns/consistency-models.md) 🧱
+- [x] [CAP & PACELC](./patterns/cap-pacelc.md) 🧱
+- [x] [Consistency Models](./patterns/consistency-models.md) 🧱
 - [ ] [Saga Pattern](./patterns/saga.md) 🧱
 - [ ] [TCC (Try-Confirm-Cancel)](./patterns/tcc.md) ⚔️
 - [ ] [Distributed Locking](./patterns/distributed-locking.md) ⚔️
@@ -69,7 +69,8 @@ I categorize architectural knowledge into three distinct layers based on their r
 
 ### 5. Reliability & Shielding (How we stay alive)
 - [ ] [Rate Limiting & Throttling](./patterns/rate-limiting.md) 🧱
-- [ ] [Timeouts & Deadlines](./patterns/timeouts.md) 🧱
+- [x] [Timeouts & Deadlines](./patterns/timeouts.md) 🧱
+- [x] [Redundancy](./patterns/redundancy.md) 🧱
 - [ ] [Retries & Exponential Backoff](./patterns/backoff.md) 🧱
 - [ ] [Circuit Breaker](./patterns/circuit-breaker.md) ⚔️
 - [ ] [Bulkhead Isolation](./patterns/bulkhead.md) ⚔️
@@ -88,15 +89,13 @@ I categorize architectural knowledge into three distinct layers based on their r
 - [ ] [Probabilistic Structures (HLL)](./patterns/hll.md) 🛰️
 
 ### 7. Observability & Insight (How we see what's happening)
-*Understanding the internal state of a system from its external outputs.*
-- [ ] [Metrics, Logs, and Traces (The Three Pillars)](./patterns/observability-pillars.md) 🧱
+- [ ] [Metrics, Logs, and Traces (The Three Observability Pillars)](./patterns/observability-pillars.md) 🧱
 - [ ] [Distributed Tracing & Context Propagation](./patterns/distributed-tracing.md) ⚔️
 - [ ] [Structured Logging](./patterns/structured-logging.md) 🧱
 - [ ] [Synthetic Monitoring vs. Real User Monitoring (RUM)](./patterns/monitoring-types.md) ⚔️
 - [ ] [Sampling Strategies](./patterns/tracing-sampling.md) 🛰️
 
 ### 8. Deployment & Evolution (How we change the ship while sailing)
-*Moving from Version A to Version B without sinking.*
 - [ ] [Blue-Green Deployment](./patterns/blue-green.md) 🧱
 - [ ] [Canary Releases](./patterns/canary.md) ⚔️
 - [ ] [Feature Flags / Toggles](./patterns/feature-flags.md) ⚔️
@@ -104,7 +103,6 @@ I categorize architectural knowledge into three distinct layers based on their r
 - [ ] [Database Schema Evolution (Expand/Contract)](./patterns/db-migration.md) 🛰️
 
 ### 9. Structural Styles (The Big Picture)
-*High-level organizational models for services.*
 - [ ] [Monolith vs. Microservices](./patterns/monolith-microservices.md) 🧱
 - [ ] [Serverless & FaaS](./patterns/serverless.md) ⚔️
 - [ ] [Cell-based Architecture](./patterns/cell-based-architecture.md) 🛰️
@@ -120,3 +118,5 @@ I categorize architectural knowledge into three distinct layers based on their r
 
 ## 📄 License
 MIT License. Content curated by me, with framing assistance from AI.
+
+
